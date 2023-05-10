@@ -72,7 +72,7 @@ This is a personal laravel template
 
 ### Before using
 
-- Copy file `.env.example` and rename it `.env`
+- Copy file `.env.example` and rename it `.env` un can run the `cp .env.example .env`
 - Run the `composer install` command
 - Run the `php artisan key:generate` command
 - Run the `npm i` or `npm install` command
