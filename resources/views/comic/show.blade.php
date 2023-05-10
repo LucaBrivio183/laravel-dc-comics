@@ -8,7 +8,8 @@
     </head>
 
     <body>
-        <div class="container text-center m-5">
+        <div class="container text-center my-5">
+            <a href="{{ route('comics.index')}}" class="btn btn-primary">Torna all'elenco</a>
             <h1>{{ $comic->title }}</h1>
             <img src="{{ $comic->thumb }}" alt="">
             <p>{{ $comic->description }}</p>

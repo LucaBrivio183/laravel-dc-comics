@@ -8,7 +8,8 @@
     <title>Comics</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container my-5">
+        <a href="{{ route('comics.create')}}" class="btn btn-primary">Aggiungi comics</a>
         <h1 class="text-center">Comics</h1>
         <div class="row">
             @foreach ($comics as $comic)
