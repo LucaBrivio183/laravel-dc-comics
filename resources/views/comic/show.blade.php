@@ -9,7 +9,15 @@
 
     <body>
         <div class="container text-center my-5">
-            <a href="{{ route('comics.index')}}" class="btn btn-primary">Torna all'elenco</a>
+            <div class="d-flex gap-2">
+                <a href="{{ route('comics.index')}}" class="btn btn-primary">Torna all'elenco</a>
+                <a href="{{ route('comics.edit',$comic->id)}}" class="btn btn-primary">Modifica</a>
+                <form action="{{ route('comics.destroy',$comic->id)}}" method="POST" class="ms-auto">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger" type="submit">Delete</button> 
+                </form>
+            </div>
             <h1>{{ $comic->title }}</h1>
             <img src="{{ $comic->thumb }}" alt="">
             <p>{{ $comic->description }}</p>
