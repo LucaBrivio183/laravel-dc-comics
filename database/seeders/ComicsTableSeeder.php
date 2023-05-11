@@ -15,6 +15,7 @@ class ComicsTableSeeder extends Seeder
      */
     public function run()
     {
+        Comic::truncate();
         $comics = config('comics');
         foreach ($comics as $comic) {
 
@@ -26,8 +27,8 @@ class ComicsTableSeeder extends Seeder
             $newComic->price = $comic['price'];
             $newComic->series = $comic['series'];
             $newComic->sale_date = $comic['sale_date'];
-            $newComic->artists = json_encode($comic['artists']);
-            $newComic->writers = json_encode($comic['writers']);
+            $newComic->artists = implode(', ', $comic['artists']);
+            $newComic->writers = implode(', ', $comic['writers']);
             $newComic->save();
             # code...
         }

@@ -47,8 +47,8 @@ class ComicController extends Controller
         $newComic->price = $data['price'];
         $newComic->series = $data['series'];
         $newComic->sale_date = $data['sale_date'];
-        $newComic->artists = json_encode($data['artists']);
-        $newComic->writers = json_encode($data['writers']);
+        $newComic->artists = $data['artists'];
+        $newComic->writers = $data['writers'];
         $newComic->save();
 
         return to_route('comics.show', $newComic->id);
