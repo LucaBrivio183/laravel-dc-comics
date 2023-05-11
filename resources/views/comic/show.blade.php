@@ -15,7 +15,7 @@
                 <form action="{{ route('comics.destroy',$comic->id)}}" method="POST" class="ms-auto">
                     @csrf
                     @method('DELETE')
-                    <button class="btn btn-danger" type="submit">Delete</button> 
+                    <button class="btn btn-danger" onclick="return confirm('Are you sure?')" type="submit">Delete</button> 
                 </form>
             </div>
             <h1>{{ $comic->title }}</h1>

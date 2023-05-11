@@ -14,17 +14,17 @@
         <div class="row">
             @foreach ($comics as $comic)
             <div class="col-3 p-2">
-                <div class="card h-100">
-                    <img src="{{ $comic->thumb }}" class="card-img-top img-fluid h-75" >
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $comic->title }}</h5>
-                        <div class="d-flex justify-content-between">
-                            <p class="card-text">{{ $comic->series}}</p>
-                            <p class="card-text">{{ $comic->price}}</p>
+                <a href="{{ route('comics.show',$comic->id)}}">
+                    <div class="card h-100">
+                        <img src="{{ $comic->thumb }}" class="card-img-top img-fluid h-75" >
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $comic->title }}</h5>
+                            <div class="d-flex justify-content-between">
+                                <p class="card-text">{{ $comic->series}}</p>
+                            </div>
                         </div>
-                        <a href="{{ route('comics.show',$comic->id)}}" class="btn btn-primary">details</a>
                     </div>
-                </div>
+                </a>
             </div>
             @endforeach
         </div>
